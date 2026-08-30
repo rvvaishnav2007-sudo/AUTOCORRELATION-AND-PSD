@@ -33,18 +33,37 @@ PROCEDURE
 
 PROGRAM:
 ~~~
-clc
-clear all; t=0:0.01:2*pi;
-x=sin(2*t); subplot(3,2,1); plot(x); au=xcorr(x,x);
- 
-Subplot (3,2,2); plot (au); v=fft(au); subplot(3,2,3);
-plot(abs(v)); fw=fft(x); subplot(3,2,4); plot(fw); fw2=(abs(fw)).^2;
-subplot(3,2,5); plot(fw2);
+clc;
+clear;
+t = 0:0.01:2*3.14;
+x = sin(3*t);
+
+subplot(3,2,1);
+plot(x);
+au = xcorr(x,x);
+
+subplot(3,2,2);
+plot(au);
+v = fft(au);
+
+subplot(3,2,3);
+plot(abs(v));
+fw = fft(x);
+
+subplot(3,2,4);
+plot(real(fw),imag(fw));
+fw2 = (abs(fw)).^2;
+
+subplot(3,2,5);
+plot(fw2);
+
 ~~~
 
 OUTPUT:
 
-<img width="1600" height="847" alt="WhatsApp Image 2026-08-20 at 3 52 05 PM" src="https://github.com/user-attachments/assets/a91ff06e-eee6-46e1-97fa-ccc86c84ecba" />
+<img width="1912" height="967" alt="Screenshot 2026-08-28 201449" src="https://github.com/user-attachments/assets/18e76012-2bc2-4171-8379-b7a1abf3d740" />
+
+
 
 
 
